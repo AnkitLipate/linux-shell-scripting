@@ -1,0 +1,17 @@
+Que B) Find out the greatest number among three numbers entered by users using if condition
+
+#!/bin/bash
+echo "Enter Three Number: "
+read num1
+read num2
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+    	echo "The greater Number is: $num1"
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+    	echo "The greater Number is: $num2"
+else
+    	echo "The greater Number is: $num3"
+fi
