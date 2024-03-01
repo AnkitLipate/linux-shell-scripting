@@ -1,0 +1,29 @@
+Que A) Create a basic calculator with using case.
+#!/bin/bash
+echo -e " 1. ADDITION \n 2. SUBSTRACTION \n 3. MULTIPLICATION \n 4. DIVISION"
+read -p "Enter your choice:  " ch
+
+
+case $ch in
+1)
+    	read -p "Enter n1 and n2 for addition:  " n1 n2
+    	sum=`expr $n1 + $n2`
+    	echo "sum of $n1 and $n2 : $sum"
+;;
+2)
+    	read -p "Enter n1 and n2 for Subtraction:  " n1 n2
+    	sub=`expr $n1 - $n2`
+    	echo "Subtraction of $n1 and $n2: $sub"
+;;
+3)
+    	read -p "Enter n1 and n2 for Multiplication:  " n1 n2
+    	mul=`expr $n1 \* $n2`
+    	echo "Multiplication of $n1 and $n2: $mul"
+;;
+4)
+    	read -p "Enter n1 and n2 for Division:  " n1 n2
+    	div=`expr $n1 / $n2`
+    	echo "Division of $n1 and $n2: $div"
+;;
+*)
+esac
