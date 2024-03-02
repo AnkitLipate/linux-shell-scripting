@@ -1,0 +1,27 @@
+29. Write a Shell Script to check whether a given number is an Armstrong number or not. 
+Test Data :
+Input a number: 153
+Expected Output :
+153 is an Armstrong number.
+#!/bin/bash
+read -p "Enter a number to check if its Armstrong: " n
+armstrng(){
+x=$1
+cubesum=0
+rem=0
+while [ $x -gt 0 ]
+do
+    	rem=$(($x % 10))
+    	cube=` expr $rem \* $rem \* $rem `
+    	cubesum=` expr  $cubesum + $cube `
+    	x=$(($x / 10))
+done
+
+if [ $1 -eq $cubesum ]
+then
+    	echo "$1 is an  Armstrong Number"
+else
+    	echo "$1 is not an Armstrong Number"
+fi
+}
+armstrng $n
