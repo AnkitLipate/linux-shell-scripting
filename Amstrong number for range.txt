@@ -1,0 +1,44 @@
+30. Write a Shell Script to find the Armstrong number for a given range of number. 
+Test Data :
+0Input starting number of range: 1
+Input ending number of range : 100
+Expected Output :
+Armstrong numbers in given range are: 1 153 370 371 407
+
+#!/bin/bash
+read -p "Enter range to print Armstrong numbers in the range: " n
+armstrng(){
+x=$1
+cubesum=0
+rem=0
+
+
+while [ $x -gt 0 ]
+
+do
+
+    	rem=$(($x % 10))
+
+    	cube=` expr $rem \* $rem \* $rem `
+
+    	cubesum=` expr  $cubesum + $cube `
+    	x=$(($x / 10))
+
+done
+
+
+if [ $1 -eq $cubesum ]
+then
+
+    	echo -n  "$1  "
+
+
+fi
+}
+
+echo "Armstrong numbers in given range are : "
+
+for((i=1; i<=n; i++))
+do
+    	armstrng $i
+done
