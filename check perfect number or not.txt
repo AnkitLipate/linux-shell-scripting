@@ -1,0 +1,31 @@
+27. Write a Shell Script to check whether a given number is a 'Perfect' number or not. 
+Test Data :
+Input the number : 56
+Expected Output :
+The positive divisor : 1 2 4 7 8 14 28
+The sum of the divisor is : 64
+So, the number is not perfect.
+#Perfect Number
+
+read -p "Enter the number: " num
+
+echo "The Positive Divisor: "
+
+for(( i=1; i<num; i++ ))
+do
+    rem=$((num % i))     
+    if [ $rem -eq 0 ]
+    then
+   	 echo $i
+   	 sum=$((sum+i))
+    fi   		 
+done
+
+echo "Sum of the Divisor is: " $sum
+
+if [ $sum -eq $num ]
+then
+    echo "So, the number is perfect"
+else
+    echo "So, the number is NOT perfect"
+fi
