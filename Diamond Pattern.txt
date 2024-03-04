@@ -1,0 +1,60 @@
+31. Write a Shell Script to display a pattern like a diamond. 
+
+    *
+   *** 
+  *****
+ *******
+********* 
+ *******
+  *****
+   ***
+    * 
+
+
+#!/bin/bash
+
+
+echo "Enter number of rows"
+read n
+
+x=$((n-1))
+
+for ((k=1;k<=n;k++))
+do
+	for ((i=1;i<=x;i++))
+	do
+    	printf " "
+	done
+
+	x=$((x-1))
+
+	for ((i=1;i<=2*k-1;i++))
+	do
+    	printf "*"
+	done
+
+	printf "\n"
+
+done
+
+
+
+x=1
+
+for ((k=1;k<=n-1;k++))
+do
+	for ((i=1;i<=x;i++))
+	do
+    	printf " "
+	done
+
+	x=$((x+1))
+
+	for ((i=1;i<=2*(n-k)-1;i++))
+	do
+    	printf "*"
+	done
+
+	printf "\n"
+
+done
