@@ -1,0 +1,20 @@
+37. Write a Shell Script to display the number in reverse order. 
+Test Data :
+Input a number: 12345
+Expected Output :
+The number in reverse order is : 54321
+
+#!/bin/bash
+
+echo "Enter a number: "
+read num
+rev=0
+while [ $num -gt 0 ]
+do
+  lastdigit=$((num % 10))
+
+  rev=$((rev * 10 + lastdigit))
+
+  num=$((num / 10))
+done
+echo "The number in reverse fashion  is: $rev"
