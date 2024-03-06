@@ -1,0 +1,30 @@
+35. Write a Shell Script to display the first n terms of the Fibonacci series. 
+Fibonacci series 0 1 2 3 5 8 13 .....
+Test Data :
+Input number of terms to display : 10
+Expected Output :
+Here is the Fibonacci series upto to 10 terms :
+0 1 1 2 3 5 8 13 21 34
+#!/bin/bash
+
+echo "Enter the number of fibonacci terms tof display:"
+read n
+
+a=0
+b=1
+echo "Here is the Fibonacci series up to $n terms:"
+echo -n "$a $b "
+
+for (( i=3; i<=n; i++ ))
+do
+	c=$((a+b))
+    
+	# display the ith term of the series
+	echo -n "$c "
+    
+	# update the values by swap
+	a=$b
+	b=$c
+done
+
+echo ""
