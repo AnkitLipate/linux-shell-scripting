@@ -1,0 +1,21 @@
+22. Write a Shell Script to print Floyd's Triangle. 
+1 
+01
+101 
+0101 
+10101
+#!/bin/bash
+read -p "Enter the number of rows: " n
+for ((i=1; i<=n; i++))
+do
+	for ((j=1; j<=i; j++))
+	do
+    	sum=$((i+j))
+    	if [ $((sum % 2)) -eq 0 ]; then
+        	echo -n "1"
+    	else
+        	echo -n "0"
+    	fi
+	done
+	echo ""
+done
