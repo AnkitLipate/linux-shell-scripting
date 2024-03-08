@@ -1,0 +1,10 @@
+Que C)  Write a program to take input of number from user and generate that number of .txt files.
+#!/bin/bash
+read -p "Enter Number of Files You want to Create : " num
+
+for((i=0; i<num; i++))
+do
+	touch file$i.txt
+done
+echo "Successfully Created $num files"
+
