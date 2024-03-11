@@ -1,0 +1,21 @@
+38. Write a Shell Script to check whether a number is a palindrome or not. 
+Test Data :
+Input a number: 121
+Expected Output :
+121 is a palindrome number.
+#!/bin/bash
+read -p "Enter a number: " num
+reverse=0
+n=$num
+while [ $n -ne 0 ]
+do
+	remainder=$((n % 10))
+	reverse=$((reverse * 10 + remainder))
+	n=$((n / 10))
+done
+
+if [ $num -eq $reverse ]; then
+	echo "$num is a palindrome number"
+else
+	echo "$num is not a palindrome number"
+fi
