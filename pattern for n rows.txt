@@ -1,0 +1,31 @@
+36. Write a Shell Script to display a such a pattern for n rows using a number that starts with 1 and each 
+row will have a 1 as the first and last number. 
+
+  1
+ 121
+12321
+
+#!/bin/bash
+
+echo "Enter the number of rows:"
+read n
+
+for (( i=1; i<=n; i++ ))
+do
+    # print spaces
+    for (( j=i; j<n; j++ ))
+    do
+        echo -n " "
+    done
+    # print the first half of the row
+    for (( j=1; j<=i; j++ ))
+    do
+        echo -n "$j"
+    done
+    # print the second half of the row in reverse order
+    for (( j=i-1; j>=1; j-- ))
+    do
+        echo -n "$j"
+    done
+    echo ""
+done
