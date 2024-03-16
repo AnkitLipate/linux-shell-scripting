@@ -1,0 +1,22 @@
+17. Write a Shell Script to make such a pattern like a pyramid with a number which will repeat the number in the same row. 
+   1
+  2 2
+ 3 3 3
+4 4 4 4
+#/bin/bash
+read -p "Enter a number : " n
+k=1
+for((i=1; i<=n; i++))
+do
+        for((j=1; j<=n-i; j++))
+        do
+                echo -n  " "
+        done
+        for((l=1; l<=i; l++)) 
+        do
+                echo -n "$k "
+         
+        done
+((k++))
+echo
+done
