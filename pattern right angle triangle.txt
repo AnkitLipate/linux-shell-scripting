@@ -1,0 +1,20 @@
+Que 9)
+ Write a Shell Script to display a pattern like a right angle triangle using an asterisk. 
+
+The pattern like :
+
+*
+**
+***
+****
+#!/bin/bash
+
+read -p "Enter the number to print * pattern: " n
+for ((i=1; i<=n; i++))
+do
+    	for((j=1; j<=i; j++))
+    	do
+            	echo -n "*"
+    	done
+    	echo
+done
