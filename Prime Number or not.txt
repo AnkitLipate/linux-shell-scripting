@@ -1,0 +1,29 @@
+32. Write a Shell Script to determine whether a given number is prime or not. 
+ Test Data :
+Input a number: 13
+Expected Output :
+13 is a prime number.
+#!/bin/bash
+
+read -p "Enter a number: " num
+
+if [ $num -lt 2 ]; then
+	echo "$num is not a prime number"
+	exit
+fi
+
+flag=1
+
+for (( i=2; i<=$num/2; i++ ))
+do
+	if [ $((num % i)) -eq 0 ]; then
+    	flag=0
+    	break
+	fi
+done
+
+if [ $flag -eq 1 ]; then
+	echo "$num is a prime number"
+else
+	echo "$num is not a prime number"
+fi
