@@ -1,0 +1,36 @@
+40. Write a Shell Script to display the pyramid pattern using the alphabet. 
+
+        A
+      A B A 
+    A B C B A
+  A B C D C B A 
+
+
+
+#!/bin/bash
+read -p "Enter thr number of rows : " n
+lettr=65
+for (( i=1; i<=n; i++ ))
+do
+for (( j=n; j>=i; j-- ))
+do
+echo -n " "
+done
+for (( k=1; k<=i; k++ ))
+do
+	echo -n "$(printf \\$(printf '%03o' "$lettr"))"
+	lettr=$((lettr+1))
+done
+
+lettr=$((lettr-1))
+
+for (( m=1; m<i; m++ ))
+do
+	lettr=$((lettr-1))
+	echo -n "$(printf \\$(printf '%03o' "$lettr"))"
+done
+
+echo ""
+lettr=65
+
+Done
