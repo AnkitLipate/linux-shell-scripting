@@ -1,0 +1,24 @@
+19. Write a Shell Script to display the n terms of a harmonic series and their sum. 
+1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/n terms
+Test Data :
+Input the number of terms : 5
+Expected Output :
+1/1 + 1/2 + 1/3 + 1/4 + 1/5 +
+Sum of Series upto 5 terms : 2.283334
+#!/bin/bash
+sum=0.0
+echo -n "Input the number of terms: "
+read n
+# print the terms of the series and update the sum
+for ((i=1; i<=n; i++))
+do
+    term=$(echo "scale=6; 1.0 / $i" | bc)
+    echo -n "1/$i"
+    if [ $i -ne $n ]
+    then
+        echo -n " + "
+    fi
+    sum=$(echo "scale=6; $sum + $term" | bc)
+done
+# print the sum of the series
+echo -e "\nSum of Series upto $n terms : $sum"
