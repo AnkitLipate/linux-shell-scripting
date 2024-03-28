@@ -1,0 +1,23 @@
+8. Write a Shell Script to display the n terms of odd natural numbers and their sum. 
+Test Data
+Input number of terms : 10
+Expected Output :
+The odd numbers are :1 3 5 7 9 11 13 15 17 19
+The Sum of odd Natural Number upto 10 terms : 100
+
+#!/bin/bash
+read -p "Enter a number :" n
+i=1
+sum=0
+while [ $i -le $n ]
+do
+    	rem=$(($i % 2))
+    	if [ $rem -ne 0 ]
+    	then
+    	sum=$(($sum+$i))
+    	echo -n "$i "
+    	fi
+((++i))
+done
+echo -e ""
+echo "The sum of odd natural number till $n is $sum"
