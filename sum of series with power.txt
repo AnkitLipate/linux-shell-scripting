@@ -1,0 +1,23 @@
+23. Write a Shell Script to find the sum of the series [x - x^3 + x^5 + ......]. 
+Test Data :
+Input the value of x :3
+Input number of terms : 5
+Expected Output :
+The sum is : 16.375000
+
+#!/bin/bash
+echo "Enter the value of x: "
+read x
+echo "Enter number of terms: "
+read n
+sum=0
+power=1
+sign=1
+for ((i=1; i<=n; i++))
+do
+  term=$(echo "scale=6; $sign * $power" | bc -l)
+  sum=$(echo "scale=6; $sum + $term" | bc -l)
+  power=$(echo "scale=6; $power * $x * $x" | bc -l)
+  sign=$(echo "scale=6; $sign * -1" | bc -l)
+done
+echo "The sum is: $sum"
