@@ -1,0 +1,22 @@
+25. Write a Shell Script that displays the n terms of square natural numbers and their sum. 
+1 4 9 16 ... n Terms
+Test Data :
+Input the number of terms : 5
+Expected Output :
+The square natural upto 5 terms are :1 4 9 16 25
+The Sum of Square Natural Number upto 5 terms = 55
+
+#square of number
+
+read -p "Enter the Number of terms: " num
+
+echo "The Square natural upto $num terms are: "
+
+for ((i=1; i<=num; i++))
+do
+    prod=$((i*i))
+    echo $prod
+    sum=$((sum+prod))
+done
+
+echo "The sum of Square Natural Number upto $num terms: "$sum
